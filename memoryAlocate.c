@@ -11,14 +11,18 @@ void stringCompare();
 
 char *scan_string();
 
+void allAllocateStaff();
+
+enum
+{
+       MAX = 100,
+       MIN = 0 
+};
+
 signed main(void)
 {
-       char *mystr = scan_string();
-       // stringCompare();
-       // palyWithPtrStrings();
-       // stringChangeWithPtr();
-       printf("The string is: %s\n", mystr);
-       free(mystr);
+       printf("%d\n" , MIN);
+
        return 0;
 }
 
@@ -94,4 +98,45 @@ char *scan_string()
        }
        str[size] = '\0';
        return str;
+}
+
+void allAllocateStaff()
+{
+
+       // fourth you have the calloc (allocate memory and initialize it with 0)
+       // fifth you have the malloc (allocate memory and don't initialize it)
+       // second you have the realloc (reallocate memory)
+       // third you have the free (free memory)
+       // sixth you have the strdup (allocate memory and copy the string to it)
+       // seventh you have the strndup (allocate memory and copy the string to it with a limit)
+       // eighth you have the alloca (allocate memory in the stack)
+       // ninth you have the valloc (allocate memory in the heap and align it to the page size)
+       // tenth you have the memalign (allocate memory in the heap and align it to the given size)
+       // eleventh you have the posix_memalign (allocate memory in the heap and align it to the given size)
+       // twelfth you have the aligned_alloc (allocate memory in the heap and align it to the given size)
+       // thirteenth you have the mcheck (check for memory leaks)
+       // fourteenth you have the mprobe (check for memory leaks)
+       // fifteenth you have the mtrace (check for memory leaks)
+       // sixteenth you have the mcheck_pedantic (check for memory leaks)
+       // seventeenth you have the mtrace_pedantic (check for memory leaks)
+       // eighteenth you have the mprobe_pedantic (check for memory leaks)
+       // nineteenth you have the mcheck_check_all (check for memory leaks)
+       // twentieth you have the mtrace_check_all (check for memory leaks)
+       // twenty-first you have the mprobe_check_all (check for memory leaks)
+       // twenty-second you have the mcheck_pedantic_check_all (check for memory leaks)
+       // twenty-third you have the mtrace_pedantic_check_all (check for memory leaks)
+       //--------------------------------------------------------------------------------------
+       //--------------------------------------------------------------------------------------
+       //--------------------------------------------------------------------------------------
+       //--------------------------------------------------------------------------------------
+       //--------------------------------------------------------------------------------------
+       int *arr = (int *)calloc(10, sizeof(int)); // Allocates zero-initialized memory for 10 integers
+       // memset is a function that fills a block of memory with a particular value.
+       // you need to allocate memory before using memset
+       memset(arr, 0, 10 * sizeof(int));          // Sets 10 integers in arr to 0
+       //memcpy(dest, src, num_bytes); // Copies num_bytes from src to dest
+       alloca(10 * sizeof(int)); // Allocates memory on the stack for 10 integers
+       // this useful because allocate memory on the stack free automatically when the function ends
+
+
 }
